@@ -40,5 +40,4 @@ class Card {
 	public void value(){
 		return this.value;
 	}
-
 }

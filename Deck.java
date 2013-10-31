@@ -20,13 +20,13 @@ class Deck {
 	public void print(){
 		for (i=0; i<cards.length; i++) {
 			if (cards[i].suit()==1) {
-				System.out.println(cards[i].number()+" of hearts");
+				System.out.println(cards[i].number()+" of hearts ");
 			} else if(cards[i].suit()==2){
-				System.out.println(cards[i].number()+" of spades");
+				System.out.println(cards[i].number()+" of spades ");
 			} else if(cards[i].suit()==3){
-				System.out.println(cards[i].number()+" of diamonds");
+				System.out.println(cards[i].number()+" of diamonds ");
 			} else{
-				System.out.println(cards[i].number()+" of clubs");
+				System.out.println(cards[i].number()+" of clubs ");
 			}
 		}
 	}
