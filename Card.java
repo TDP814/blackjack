@@ -27,17 +27,17 @@ class Card {
 		this.suit = suit;
 	}
 
-	public void setValue(int value){
+	public void setValue(){
 		if (this.number < 11 && this.number > 1) {
 			this.value = value;
-		} else if(this.number>10 && this.number <13){
+		} else if(this.number > 10 && this.number < 13){
 			this.value = 10;
 		} else if(this.number ==1){
 			this.value = 11;
 		}
 	}
 
-	public void value(){
+	public int value(){
 		return this.value;
 	}
 }

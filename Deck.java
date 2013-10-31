@@ -1,10 +1,13 @@
+import java.util.Random;
+
 class Deck {
 	
 	private Card[] cards = new Card[52];
+	private Random r = new Random();
 
 	public Deck(Card[] cards){
-		for (i=0; i<cards.length; i++) {
-			cards[i].suit = (i % 13)+1;
+		for (int i=0; i<cards.length; i++) {
+			cards[i].setNumber((i % 13)+1);
 			if (i<13) {
 				cards[i].setSuit(1);
 			} else if(i<26){
@@ -18,7 +21,7 @@ class Deck {
 	}
 
 	public void print(){
-		for (i=0; i<cards.length; i++) {
+		for (int i=0; i<cards.length; i++) {
 			if (cards[i].suit()==1) {
 				System.out.println(cards[i].number()+" of hearts ");
 			} else if(cards[i].suit()==2){
@@ -37,7 +40,7 @@ class Deck {
 		for (int i=0; i<cards.length; i++) {
 			n=r.nextInt(51);
 			temp = cards[n];
-			cards[n] = cards[i]
+			cards[n] = cards[i];
 			cards[i] = temp;
 		}
 	}
