@@ -2,6 +2,7 @@ class Card {
 	
 	private int number;
 	private int suit;
+	private int value;
 
 	public Card(int number, int suit){
 		setNumber(number);
@@ -23,9 +24,21 @@ class Card {
 	}
 
 	public void setSuit(int suit){
-		if (suit <= 4 && suit >= 1) {
-			this.suit = suit;
+		this.suit = suit;
+	}
+
+	public void setValue(int value){
+		if (this.number < 11 && this.number > 1) {
+			this.value = value;
+		} else if(this.number>10 && this.number <13){
+			this.value = 10;
+		} else if(this.number ==1){
+			this.value = 11;
 		}
+	}
+
+	public void value(){
+		return this.value;
 	}
 
 }
