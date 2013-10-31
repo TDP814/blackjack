@@ -5,8 +5,9 @@ class Card {
 	private int value;
 
 	public Card(int number, int suit){
-		setNumber(number);
-		setSuit(suit);
+		this.setNumber(number);
+		this.setSuit(suit);
+		this.setValue();
 	}
 
 	public int number(){
