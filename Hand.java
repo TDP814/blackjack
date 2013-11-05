@@ -21,4 +21,9 @@ class Hand {
 
 	}
 
+	public static void main(String[] args) {
+		Deck d = new Deck();
+		Hand h = new Hand();
+	}
+
 }
