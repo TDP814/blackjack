@@ -19,9 +19,9 @@ class Card {
 	}
 
 	public void setNumber(int number){
-		if (number <= 13 && number >= 1) {
+		//if (number <= 13 && number >= 1) {
 			this.number = number;
-		}
+		//}
 	}
 
 	public void setSuit(int suit){
