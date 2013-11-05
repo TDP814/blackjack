@@ -5,25 +5,52 @@ class Hand {
 	private int totalValue;
 
 	public Hand(Card c1, Card c2){
-		this.hand[0] = c1;
-		this.hand[1] = c2;
+		this.hand[0] = d.deal();
+		this.hand[1] = d.deal();
 		this.cardsInHand = 2;
-		totalValue = c1.value() + c2.value();
+		totalValue = this.hand[0].value() + this.hand[1].value();
+		this.reduce();
 	}
 
 	public void hit(){
 		this.hand[cardsInHand] = Deck.deal();
 		this.totalValue += this.hand[cardsInHand].value();
 		cardsInHand++;
+		this.reduce();
+	}
+
+	public void reduce(){
+		if (this.totalValue>21) {
+			for (int i=0; i<cardsInHand; i++) {
+				this.hand[i].reduce();
+			}
+		}
 	}
 
 	public void stay(){
 
 	}
 
+	public void print(){
+		for (int i=0; i<cardsInHand; i++) {
+			if (this.hand[i].suit()==1) {
+				System.out.println(hand[i].number()+" of hearts ");
+			} else if(this.hand[i].suit()==2){
+				System.out.println(hand[i].number()+" of spades ");
+			} else if(this.hand[i].suit()==3){
+				System.out.println(hand[i].number()+" of diamonds ");
+			} else{
+				System.out.println(hand[i].number()+" of clubs ");
+			}
+		}
+		System.out.println(totalValue);
+	}
+
 	public static void main(String[] args) {
 		Deck d = new Deck();
-		Hand h = new Hand();
+		d.shuffle();
+		Hand h = new Hand(d);
+
 	}
 
 }

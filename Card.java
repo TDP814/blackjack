@@ -31,7 +31,7 @@ class Card {
 	public void setValue(){
 		if (this.number < 11 && this.number > 1) {
 			this.value = value;
-		} else if(this.number > 10 && this.number < 13){
+		} else if(this.number > 10 && this.number <= 13){
 			this.value = 10;
 		} else if(this.number ==1){
 			this.value = 11;
@@ -40,5 +40,10 @@ class Card {
 
 	public int value(){
 		return this.value;
+	}
+
+	public static void main(String[] args) {
+		Card c = new Card();
+		System.out.println(c.number()+ " "+c.suit()+" "+ c.value());
 	}
 }

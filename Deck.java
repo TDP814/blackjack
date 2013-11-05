@@ -18,6 +18,7 @@ class Deck {
 				cards[i].setSuit(4);
 			}
 		}
+		card = -1;
 	}
 
 	public void print(){
