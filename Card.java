@@ -28,6 +28,12 @@ class Card {
 		this.suit = suit;
 	}
 
+	public void reduce(){
+		if (this.number ==1) {
+			this.value = 1;
+		}
+	}
+
 	public void setValue(){
 		if (this.number < 11 && this.number > 1) {
 			this.value = value;

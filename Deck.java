@@ -46,4 +46,8 @@ class Deck {
 		}
 	}
 
+	public void deal(){
+		
+	}
+
 }
