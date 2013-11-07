@@ -47,7 +47,8 @@ class Deck {
 	}
 
 	public void deal(){
-		
+		card++;
+		return cards[card];
 	}
 
 }
