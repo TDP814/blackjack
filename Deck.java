@@ -1,54 +1,37 @@
-import java.util.Random;
-
-class Deck {
-	
-	private Card[] cards = new Card[52];
-	private Random r = new Random();
-
-	public Deck(Card[] cards){
-		for (int i=0; i<cards.length; i++) {
-			cards[i].setNumber((i % 13)+1);
-			if (i<13) {
-				cards[i].setSuit(1);
-			} else if(i<26){
-				cards[i].setSuit(2);
-			} else if(i<39){
-				cards[i].setSuit(3);
-			} else{
-				cards[i].setSuit(4);
-			}
-		}
-		card = -1;
-	}
-
-	public void print(){
-		for (int i=0; i<cards.length; i++) {
-			if (cards[i].suit()==1) {
-				System.out.println(cards[i].number()+" of hearts ");
-			} else if(cards[i].suit()==2){
-				System.out.println(cards[i].number()+" of spades ");
-			} else if(cards[i].suit()==3){
-				System.out.println(cards[i].number()+" of diamonds ");
-			} else{
-				System.out.println(cards[i].number()+" of clubs ");
-			}
-		}
-	}
-
-	public void shuffle(){
-		int n;
-		Card temp;
-		for (int i=0; i<cards.length; i++) {
-			n=r.nextInt(51);
-			temp = cards[n];
-			cards[n] = cards[i];
-			cards[i] = temp;
-		}
-	}
-
-	public void deal(){
-		card++;
-		return cards[card];
-	}
-
+public class Deck {
+        private Card[] deck;
+        private int cardsUsed;
+        public Deck(){
+                deck=new Card[52];
+                int counter = 0;
+                for (int i = 0; i <= 3;i++) {
+                        for (int j = 1; j < 14 ;j++ ) {
+                                deck[counter] = new Card(i,j);
+                                counter++;
+                                System.out.println("Card number: "+counter+"\t"+ deck[counter-1].getStrCard());
+                        }
+                }
+        }
+        public void shuffle() {
+                for (int i = 51;i > 0;i--) {
+                        int rand = (int)(Math.random()*(i+1));
+                        Card temp = deck[i];
+                        deck[i] = deck[rand];
+                        deck[rand] = temp;
+                }
+                cardsUsed = 0;
+                int counter = 0;
+                for (int i = 0; i < 52;i++) {        
+                                System.out.println("Card number: "+(i+1)+"\t"+ deck[i].getStrCard());        
+                }
+        }
+        public int cardsLeft() {
+                return 52 - cardsUsed;
+        }
+        public Card dealCard() {
+                if (cardsUsed == 52)
+                        shuffle();
+                        cardsUsed++;
+                        return deck[cardsUsed -1];
+        }
 }
