@@ -3,6 +3,7 @@ public class Card {
         private String[] stringValue = {"Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"};
         private int suit;
         private String[] suitString = {"Clubs","Hearts","Diamonds","Spades"};
+        
         public Card(int decksuit, int deckvalue){
                 this.value = deckvalue;
                 this.suit = decksuit;

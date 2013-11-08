@@ -1,11 +1,11 @@
 public class Game {
-        public static void main(String[] args) {
-                boolean e = playBlackJack();
-        }
-        static boolean playBlackJack(){
-                Deck deck;
-                deck = new Deck();
-                deck.shuffle();
-                return true;
-        }
+    public static void main(String[] args) {
+            boolean e = playBlackJack();
+    }
+    static boolean playBlackJack(){
+            Deck deck;
+            deck = new Deck();
+            deck.shuffle();
+            return true;
+    }
 }
