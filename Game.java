@@ -1,13 +1,11 @@
-import java.awt.Graphics;
-import java.awt.Rectangles;
-import java.awt.Image;
-
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
-class Game {
-	
-	
+public class Game {
+        public static void main(String[] args) {
+                boolean e = playBlackJack();
+        }
+        static boolean playBlackJack(){
+                Deck deck;
+                deck = new Deck();
+                deck.shuffle();
+                return true;
+        }
 }
