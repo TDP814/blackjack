@@ -1,56 +1,29 @@
-class Card {
-	
-	private int number;
-	private int suit;
-	private int value;
-
-	public Card(int number, int suit){
-		this.setNumber(number);
-		this.setSuit(suit);
-		this.setValue();
-	}
-
-	public int number(){
-		return this.number;
-	}
-
-	public int suit(){
-		return this.suit;
-	}
-
-	public void setNumber(int number){
-		//if (number <= 13 && number >= 1) {
-			this.number = number;
-			setValue();
-		//}
-	}
-
-	public void setSuit(int suit){
-		this.suit = suit;
-	}
-
-	public void reduce(){
-		if (this.number ==1) {
-			this.value = 1;
-		}
-	}
-
-	public void setValue(){
-		if (this.number < 11 && this.number > 1) {
-			this.value = value;
-		} else if(this.number > 10 && this.number <= 13){
-			this.value = 10;
-		} else if(this.number ==1){
-			this.value = 11;
-		}
-	}
-
-	public int value(){
-		return this.value;
-	}
-
-	public static void main(String[] args) {
-		Card c = new Card();
-		System.out.println(c.number()+ " "+c.suit()+" "+ c.value());
-	}
+public class Card {
+        private int value;
+        private String[] stringValue = {"Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"};
+        private int suit;
+        private String[] suitString = {"Clubs","Hearts","Diamonds","Spades"};
+        public Card(int decksuit, int deckvalue){
+                this.value = deckvalue;
+                this.suit = decksuit;
+        }
+        public int getValue(){
+                return this.value;
+        }
+        public int getSuit(){
+                return this.suit;
+        }
+        public String getStrCard(){
+                String cardInfo = stringValue[value-1] + " of "+ suitString[suit];
+                return cardInfo;
+        }
+        public String getCardImage() {
+                String temp;
+                if (stringValue[value-1].equals("10")) {
+                        temp = "10";
+                }else {
+                        temp=stringValue[value-1].substring(0,1);
+                }
+                return temp+suitString[suit];
+        }
 }
