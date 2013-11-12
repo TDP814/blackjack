@@ -8,22 +8,22 @@ public class Runner extends Applet{
         private int height = 70;
 
         public void init() {
-                this.picturesAreHard = new image[52];
-                this.picturesAreHard1 = new image[52];
-                Card temp;
-                deck = new Deck();
+                // this.picturesAreHard = new image[52];
+                // this.picturesAreHard1 = new image[52];
+                // Card temp;
+                // deck = new Deck();
+                // // deck.shuffle();
+                // for (int i = 0;i < 52; i++) {
+                //         temp = deck.dealCard();
+                //         picturesAreHard[i] = new image(temp.getCardImage());
+
+                // }
                 // deck.shuffle();
-                for (int i = 0;i < 52; i++) {
-                        temp = deck.dealCard();
-                        picturesAreHard[i] = new image(temp.getCardImage());
+                // for (int i = 0;i < 52; i++) {
+                //         temp = deck.dealCard();
+                //         picturesAreHard1[i] = new image(temp.getCardImage());
 
-                }
-                deck.shuffle();
-                for (int i = 0;i < 52; i++) {
-                        temp = deck.dealCard();
-                        picturesAreHard1[i] = new image(temp.getCardImage());
-
-                }
+                // }
         }
         public void paint(Graphics g) {
                 int countrow=0;

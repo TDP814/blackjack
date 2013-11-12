@@ -15,7 +15,7 @@ public class image {
                 this.cardImage = image.loadImage(name);
         }
         public void draw(Graphics g, Rectangle r) {
-                g.drawImage(image, r.x, r.y, r.width, r.height, null);
+                g.drawImage(cardImage, r.x, r.y, r.width, r.height, null);
         }
         private static Image loadImage(String name) {
                 String path = null;
